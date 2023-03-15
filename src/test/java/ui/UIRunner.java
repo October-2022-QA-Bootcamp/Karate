@@ -1,14 +1,14 @@
-package features;
+package ui;
 
 import com.intuit.karate.junit5.Karate;
 
-public class FeatureRunner {
+public class UIRunner {
 
 	@Karate.Test
 	public Karate test() {
 		return Karate
-				.run("getCalls.feature")
-				.tags("@players")
+				.run("uiAutomation.feature")
+				.tags("@testSelenium")
 				.relativeTo(getClass());
 	}
 }

@@ -1,17 +1,19 @@
 Feature: Enthrall Education API GET Valdiation
 
   Background: 
-    Given url 'http://enthrall.education:3001'
+    Given url baseUrl
 
   @get-countries
   Scenario: Validate countries endpoint status 200
-    Given path '/countries'
+    * def pathUrl = constant.countriesEndpoint
+    Given path pathUrl
     When method GET
     Then status 200
 
   @players
   Scenario: Validate players endpoint staus 200
-    Given path '/players'
+    * def pathUrl = constant.playersEndpoint
+    Given path pathUrl
     When method GET
     Then status 200
     And match response[0].id == 1
